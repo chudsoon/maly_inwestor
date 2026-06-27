@@ -1,0 +1,82 @@
+{
+    "PKO.WA": {
+        "name": "PKO BP",
+        "price": 0.0
+    },
+    "PKN.WA": {
+        "name": "PKN Orlen",
+        "price": 0.0
+    },
+    "PZU.WA": {
+        "name": "PZU",
+        "price": 0.0
+    },
+    "ALE.WA": {
+        "name": "Allegro",
+        "price": 0.0
+    },
+    "LPP.WA": {
+        "name": "LPP",
+        "price": 0.0
+    },
+    "DNP.WA": {
+        "name": "Dino Polska",
+        "price": 0.0
+    },
+    "PEO.WA": {
+        "name": "Pekao",
+        "price": 0.0
+    },
+    "KGH.WA": {
+        "name": "KGHM",
+        "price": 0.0
+    },
+    "CDR.WA": {
+        "name": "CD Projekt",
+        "price": 0.0
+    },
+    "SPL.WA": {
+        "name": "Santander Bank Polska",
+        "price": 0.0
+    },
+    "JSW.WA": {
+        "name": "JSW",
+        "price": 0.0
+    },
+    "MBK.WA": {
+        "name": "mBank",
+        "price": 0.0
+    },
+    "KRU.WA": {
+        "name": "Kruk",
+        "price": 0.0
+    },
+    "PGE.WA": {
+        "name": "PGE",
+        "price": 0.0
+    },
+    "KTY.WA": {
+        "name": "Kęty",
+        "price": 0.0
+    },
+    "ALR.WA": {
+        "name": "Alior Bank",
+        "price": 0.0
+    },
+    "CPS.WA": {
+        "name": "Cyfrowy Polsat",
+        "price": 0.0
+    },
+    "PCO.WA": {
+        "name": "Pepco Group",
+        "price": 0.0
+    },
+    "BDX.WA": {
+        "name": "Budimex",
+        "price": 0.0
+    },
+    "OPL.WA": {
+        "name": "Orange Polska",
+        "price": 0.0
+    }
+}
