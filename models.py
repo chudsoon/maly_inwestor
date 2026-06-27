@@ -44,7 +44,8 @@ class Wallet:
         return asdict(self)
     
     def buy(self, transaction_id :str, share :Share, quantity_to_buy :int):
-            transaction = Transaction(transaction_id, datetime.timestamp, share.price *quantity_to_buy, share.ticker, quantity_to_buy, "buy")
+            time = str(datetime.timestamp)
+            transaction = Transaction(transaction_id, time, share.price *quantity_to_buy, share.ticker, quantity_to_buy, "buy")
             if quantity_to_buy < 1:
                 raise ValueError("Liczba akcji musi być większa od 0.")
             if share.price <= 0:

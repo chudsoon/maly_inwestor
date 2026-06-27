@@ -1,4 +1,10 @@
 {
-    "72r141kkss": {
-        "id": "72r141kkss",
-        "time": 
+    "02q9rzoban": {
+        "id": "02q9rzoban",
+        "time": "<method 'timestamp' of 'datetime.datetime' objects>",
+        "value": 103.62,
+        "ticker": "PKO.WA",
+        "quantity": 1,
+        "type": "buy"
+    }
+}

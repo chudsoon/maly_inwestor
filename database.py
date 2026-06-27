@@ -49,6 +49,7 @@ def load_transaction_history():
             transaction_history = {}
             for key, v in json_dict.items():
                  transaction_history[key] = Transaction(v['id'], v['time'], v['value'], v['ticker'], v['quantity'], v['type'])
+            return transaction_history
     else:
         return {}
 
