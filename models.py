@@ -14,19 +14,15 @@ class Share:
 
 
 
-
+@dataclass
 class Transaction:
-    def __init__(self, id :str, time :datetime, value :float, ticker :str, quantity :int, type :str):
-        self.id = id
-        self.time = time
-        self.value = value
-        self.ticker = ticker
-        self.quantity = quantity
-        self.type = type
+    id :str
+    time :datetime
+    value :float
+    ticker :str
+    quantity :int
+    type :str
 
-
-    def __repr__(self):
-        return f"Transakcja {self.type} (id='{self.id}', time='{self.time}',  papier={self.share.name}, w liczbie={self.quantity} szt. wartosć={self.value} PLN)"
 
     def to_dict(self):
         return asdict(self)

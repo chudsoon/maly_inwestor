@@ -13,9 +13,10 @@ def stock_market_update_list(stock_market :dict):
     today = datetime.today().strftime("%Y-%m-%d")
     tickers = list(stock_market.keys())
     quotes = fetch_gpw_data_list(tickers)
+  
     for key in stock_market.keys():
         try:
-            val = quotes.loc[today, ('Close', key)]
+            val = quotes['Close'][key].iloc[-1]
             if math.isnan(val):
                 stock_market[key].price = 0.0
             else:
