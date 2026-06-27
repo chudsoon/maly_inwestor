@@ -6,5 +6,37 @@
         "ticker": "PKO.WA",
         "quantity": 1,
         "type": "buy"
+    },
+    "97j9qusmfh": {
+        "id": "97j9qusmfh",
+        "time": "<method 'timestamp' of 'datetime.datetime' objects>",
+        "value": 103.62,
+        "ticker": "PKO.WA",
+        "quantity": 1,
+        "type": "buy"
+    },
+    "nd20qk5jns": {
+        "id": "nd20qk5jns",
+        "time": "<method 'timestamp' of 'datetime.datetime' objects>",
+        "value": 123.46,
+        "ticker": "PKN.WA",
+        "quantity": 1,
+        "type": "buy"
+    },
+    "zgf5qvuo2b": {
+        "id": "zgf5qvuo2b",
+        "time": "2026-06-27 17:42:16",
+        "value": 65.44,
+        "ticker": "PZU.WA",
+        "quantity": 1,
+        "type": "buy"
+    },
+    "83shqyczz1": {
+        "id": "83shqyczz1",
+        "time": "2026-06-27 17:46:58",
+        "value": 65.44,
+        "ticker": "PZU.WA",
+        "quantity": 1,
+        "type": "sell"
     }
 }

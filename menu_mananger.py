@@ -44,7 +44,9 @@ class MenuManager:
         try:
             share_ticker = Prompt.ask("Podaj skrótki spółki, którą chcesz sprzedać", choices=self.wallet.portfolio.keys())
             quantity = int(Prompt.ask("Ile akcji checsz sprzedać?"))
-            return self.wallet.sell(generate_transaction_id(), self.stock_makret[share_ticker], quantity)
+            message, transaction =  self.wallet.sell(generate_transaction_id(), self.stock_makret[share_ticker], quantity)
+            save_trasaction_history(transaction)
+            return message
         except InsuffincientSharesError as e:
             return f"[bold red]Problem z ilością: {e}[/bold red]"
         except ValueError as e:

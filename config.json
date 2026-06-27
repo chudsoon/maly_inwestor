@@ -1,106 +1,106 @@
 {
     "primary": {
-        "cash": 431.1099999999999,
+        "cash": 204.02999999999992,
         "market": {
             "PKO.WA": {
                 "ticker": "PKO.WA",
                 "name": "PKO BP",
-                "price": 0.0
+                "price": 103.62
             },
             "PKN.WA": {
                 "ticker": "PKN.WA",
                 "name": "PKN Orlen",
-                "price": 0.0
+                "price": 123.46
             },
             "PZU.WA": {
                 "ticker": "PZU.WA",
                 "name": "PZU",
-                "price": 0.0
+                "price": 65.44
             },
             "ALE.WA": {
                 "ticker": "ALE.WA",
                 "name": "Allegro",
-                "price": 0.0
+                "price": 37.19
             },
             "LPP.WA": {
                 "ticker": "LPP.WA",
                 "name": "LPP",
-                "price": 0.0
+                "price": 18310.0
             },
             "DNP.WA": {
                 "ticker": "DNP.WA",
                 "name": "Dino Polska",
-                "price": 0.0
+                "price": 28.98
             },
             "PEO.WA": {
                 "ticker": "PEO.WA",
                 "name": "Pekao",
-                "price": 0.0
+                "price": 228.8
             },
             "KGH.WA": {
                 "ticker": "KGH.WA",
                 "name": "KGHM",
-                "price": 0.0
+                "price": 327.75
             },
             "CDR.WA": {
                 "ticker": "CDR.WA",
                 "name": "CD Projekt",
-                "price": 0.0
+                "price": 217.4
             },
             "SPL.WA": {
                 "ticker": "SPL.WA",
                 "name": "Santander Bank Polska",
-                "price": 0.0
+                "price": 647.6
             },
             "JSW.WA": {
                 "ticker": "JSW.WA",
                 "name": "JSW",
-                "price": 0.0
+                "price": 24.2
             },
             "MBK.WA": {
                 "ticker": "MBK.WA",
                 "name": "mBank",
-                "price": 0.0
+                "price": 1372.5
             },
             "KRU.WA": {
                 "ticker": "KRU.WA",
                 "name": "Kruk",
-                "price": 0.0
+                "price": 403.4
             },
             "PGE.WA": {
                 "ticker": "PGE.WA",
                 "name": "PGE",
-                "price": 0.0
+                "price": 9.6
             },
             "KTY.WA": {
                 "ticker": "KTY.WA",
                 "name": "Kęty",
-                "price": 0.0
+                "price": 1228.0
             },
             "ALR.WA": {
                 "ticker": "ALR.WA",
                 "name": "Alior Bank",
-                "price": 0.0
+                "price": 132.55
             },
             "CPS.WA": {
                 "ticker": "CPS.WA",
                 "name": "Cyfrowy Polsat",
-                "price": 0.0
+                "price": 14.89
             },
             "PCO.WA": {
                 "ticker": "PCO.WA",
                 "name": "Pepco Group",
-                "price": 0.0
+                "price": 37.25
             },
             "BDX.WA": {
                 "ticker": "BDX.WA",
                 "name": "Budimex",
-                "price": 0.0
+                "price": 721.8
             },
             "OPL.WA": {
                 "ticker": "OPL.WA",
                 "name": "Orange Polska",
-                "price": 0.0
+                "price": 14.62
             }
         },
         "shares_value": 0.0,
@@ -146,13 +146,21 @@
                 "ticker": "PKO.WA",
                 "quantity": 1,
                 "type": "buy"
+            },
+            "83shqyczz1": {
+                "id": "83shqyczz1",
+                "time": "2026-06-27 17:46:58",
+                "value": 65.44,
+                "ticker": "PZU.WA",
+                "quantity": 1,
+                "type": "sell"
             }
         },
         "portfolio": {
             "PKO.WA": {
                 "ticker": "PKO.WA",
                 "name": "PKO BP",
-                "quantity": 2,
+                "quantity": 3,
                 "price": 100.5
             },
             "ALR.WA": {
@@ -160,6 +168,12 @@
                 "name": "Alior Bank",
                 "quantity": 3,
                 "price": 123.4
+            },
+            "PKN.WA": {
+                "ticker": "PKN.WA",
+                "name": "PKN Orlen",
+                "quantity": 1,
+                "price": 123.46
             }
         }
     }

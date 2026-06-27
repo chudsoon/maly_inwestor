@@ -54,11 +54,13 @@ def load_transaction_history():
         return {}
 
 def save_trasaction_history(transaction: Transaction):
-    if os.path.join(TRANSACTION_HISTORY_PATH):
-        transaction_dict = {}
-        transaction_dict[transaction.id] = transaction.to_dict()
-        with open(TRANSACTION_HISTORY_PATH, 'w', encoding='utf-8') as file:
-            json.dump(transaction_dict, file, ensure_ascii=False, indent=4)
+    if os.path.isfile(TRANSACTION_HISTORY_PATH):
+        if os.path.join(TRANSACTION_HISTORY_PATH):
+            with open(TRANSACTION_HISTORY_PATH, 'r', encoding='utf-8') as file:
+                transaction_dict = json.load(file)
+            transaction_dict[transaction.id] = transaction.to_dict()
+            with open(TRANSACTION_HISTORY_PATH, 'w', encoding='utf-8') as file:
+                json.dump(transaction_dict, file, ensure_ascii=False, indent=4)
     else:
         return "Plik Transaction_History nie istnieje"
 

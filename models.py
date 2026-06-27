@@ -1,4 +1,5 @@
 from dataclasses import dataclass, asdict
+import time
 from datetime import datetime
 
 
@@ -44,8 +45,9 @@ class Wallet:
         return asdict(self)
     
     def buy(self, transaction_id :str, share :Share, quantity_to_buy :int):
-            time = str(datetime.timestamp)
-            transaction = Transaction(transaction_id, time, share.price *quantity_to_buy, share.ticker, quantity_to_buy, "buy")
+            ts = time.time()
+            timestamp = datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+            transaction = Transaction(transaction_id, timestamp, share.price *quantity_to_buy, share.ticker, quantity_to_buy, "buy")
             if quantity_to_buy < 1:
                 raise ValueError("Liczba akcji musi być większa od 0.")
             if share.price <= 0:
@@ -80,7 +82,9 @@ class Wallet:
                 f"a chcesz sprzedać {quantity_to_sell}."
             )
         if self.portfolio[share.ticker]["quantity"] >= quantity_to_sell:
-            transaction = Transaction(transaction_id, share.price * quantity_to_sell, share.ticker, quantity_to_sell, "sell")
+            ts = time.time()
+            timestamp = datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+            transaction = Transaction(transaction_id, timestamp, share.price * quantity_to_sell, share.ticker, quantity_to_sell, "sell")
 
             self.cash += transaction.value
             self.transaction_history[transaction_id] = transaction.__dict__
@@ -92,7 +96,8 @@ class Wallet:
             if self.portfolio[share.ticker]["quantity"] == 0:
                 del self.portfolio[share.ticker]
 
-            return f"Sprzedano {quantity_to_sell} akcji {share.name} za {transaction.value} PLN"
+            message = f"Sprzedano {quantity_to_sell} akcji {share.name} za {transaction.value} PLN"
+            return message, transaction
         else:
             return f"Nie masz tylu akcji w portfelu (posiadasz: {self.portfolio[share.ticker]['quantity']} szt.)"
 
