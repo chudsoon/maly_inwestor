@@ -1,179 +1,159 @@
 {
     "primary": {
-        "cash": 204.02999999999992,
+        "cash": 101.04,
         "market": {
             "PKO.WA": {
                 "ticker": "PKO.WA",
                 "name": "PKO BP",
-                "price": 103.62
+                "price": 105.92
             },
             "PKN.WA": {
                 "ticker": "PKN.WA",
                 "name": "PKN Orlen",
-                "price": 123.46
+                "price": 145.92
             },
             "PZU.WA": {
                 "ticker": "PZU.WA",
                 "name": "PZU",
-                "price": 65.44
+                "price": 68.8
             },
             "ALE.WA": {
                 "ticker": "ALE.WA",
                 "name": "Allegro",
-                "price": 37.19
+                "price": 43.94
             },
             "LPP.WA": {
                 "ticker": "LPP.WA",
                 "name": "LPP",
-                "price": 18310.0
+                "price": 20200.0
             },
             "DNP.WA": {
                 "ticker": "DNP.WA",
                 "name": "Dino Polska",
-                "price": 28.98
+                "price": 29.43
             },
             "PEO.WA": {
                 "ticker": "PEO.WA",
                 "name": "Pekao",
-                "price": 228.8
+                "price": 227.3
             },
             "KGH.WA": {
                 "ticker": "KGH.WA",
                 "name": "KGHM",
-                "price": 327.75
+                "price": 294.25
             },
             "CDR.WA": {
                 "ticker": "CDR.WA",
                 "name": "CD Projekt",
-                "price": 217.4
+                "price": 234.7
             },
             "SPL.WA": {
                 "ticker": "SPL.WA",
                 "name": "Santander Bank Polska",
-                "price": 647.6
+                "price": 0.0
             },
             "JSW.WA": {
                 "ticker": "JSW.WA",
                 "name": "JSW",
-                "price": 24.2
+                "price": 25.98
             },
             "MBK.WA": {
                 "ticker": "MBK.WA",
                 "name": "mBank",
-                "price": 1372.5
+                "price": 1355.5
             },
             "KRU.WA": {
                 "ticker": "KRU.WA",
                 "name": "Kruk",
-                "price": 403.4
+                "price": 414.8
             },
             "PGE.WA": {
                 "ticker": "PGE.WA",
                 "name": "PGE",
-                "price": 9.6
+                "price": 9.45
             },
             "KTY.WA": {
                 "ticker": "KTY.WA",
                 "name": "Kęty",
-                "price": 1228.0
+                "price": 1273.0
             },
             "ALR.WA": {
                 "ticker": "ALR.WA",
                 "name": "Alior Bank",
-                "price": 132.55
+                "price": 132.45
             },
             "CPS.WA": {
                 "ticker": "CPS.WA",
                 "name": "Cyfrowy Polsat",
-                "price": 14.89
+                "price": 16.2
             },
             "PCO.WA": {
                 "ticker": "PCO.WA",
                 "name": "Pepco Group",
-                "price": 37.25
+                "price": 41.26
             },
             "BDX.WA": {
                 "ticker": "BDX.WA",
                 "name": "Budimex",
-                "price": 721.8
+                "price": 732.0
             },
             "OPL.WA": {
                 "ticker": "OPL.WA",
                 "name": "Orange Polska",
-                "price": 14.62
+                "price": 14.47
             }
         },
-        "shares_value": 0.0,
-        "transaction_history": {
-            "ramfbbhvbu": {
-                "id": "ramfbbhvbu",
-                "value": 100.54,
-                "ticker": "PKO.WA",
-                "quantity": 1,
-                "type": "sell"
-            },
-            "6xhic3e365": {
-                "id": "6xhic3e365",
-                "value": 10.27,
-                "ticker": "PGE.WA",
-                "quantity": 1,
-                "type": "sell"
-            },
-            "08piq1hfmt": {
-                "id": "08piq1hfmt",
-                "value": 201.0,
-                "ticker": "PKO.WA",
-                "quantity": 2,
-                "type": "buy"
-            },
-            "ga400plq0f": {
-                "id": "ga400plq0f",
-                "value": 100.32,
-                "ticker": "PKO.WA",
-                "quantity": 1,
-                "type": "sell"
-            },
-            "ne3953jtss": {
-                "id": "ne3953jtss",
-                "value": 370.20000000000005,
-                "ticker": "ALR.WA",
-                "quantity": 3,
-                "type": "buy"
-            },
-            "8cmpmohe5f": {
-                "id": "8cmpmohe5f",
-                "value": 101.0,
-                "ticker": "PKO.WA",
-                "quantity": 1,
-                "type": "buy"
-            },
-            "83shqyczz1": {
-                "id": "83shqyczz1",
-                "time": "2026-06-27 17:46:58",
-                "value": 65.44,
-                "ticker": "PZU.WA",
-                "quantity": 1,
-                "type": "sell"
-            }
-        },
+        "shares_value": 898.5,
         "portfolio": {
             "PKO.WA": {
-                "ticker": "PKO.WA",
-                "name": "PKO BP",
-                "quantity": 3,
-                "price": 100.5
+                "quantity": 0,
+                "value": 0.0,
+                "avg_price": 110.26
+            },
+            "DNP.WA": {
+                "quantity": 10,
+                "value": 288.29999999999995,
+                "avg_price": 28.829999999999995
+            },
+            "PZU.WA": {
+                "quantity": 0,
+                "value": 0.0,
+                "avg_price": 69.94
+            },
+            "PEO.WA": {
+                "quantity": 2,
+                "value": 474.4,
+                "avg_price": 237.2
+            },
+            "PGE.WA": {
+                "quantity": 1,
+                "value": 9.37,
+                "avg_price": 9.37
+            },
+            "OPL.WA": {
+                "quantity": 1,
+                "value": 14.46,
+                "avg_price": 14.46
+            },
+            "PCO.WA": {
+                "quantity": 1,
+                "value": 40.74,
+                "avg_price": 40.74
+            },
+            "JSW.WA": {
+                "quantity": 1,
+                "value": 26.99,
+                "avg_price": 26.99
             },
             "ALR.WA": {
-                "ticker": "ALR.WA",
-                "name": "Alior Bank",
-                "quantity": 3,
-                "price": 123.4
+                "quantity": 0,
+                "value": 0.0,
+                "avg_price": 138.6
             },
-            "PKN.WA": {
-                "ticker": "PKN.WA",
-                "name": "PKN Orlen",
+            "ALE.WA": {
                 "quantity": 1,
-                "price": 123.46
+                "value": 44.24,
+                "avg_price": 44.24
             }
         }
     }

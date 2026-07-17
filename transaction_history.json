@@ -1,42 +1,106 @@
 {
-    "02q9rzoban": {
-        "id": "02q9rzoban",
-        "time": "<method 'timestamp' of 'datetime.datetime' objects>",
-        "value": 103.62,
+    "xai9g3st5u": {
+        "id": "xai9g3st5u",
+        "time": "2026-07-15 10:51:10",
+        "value": 110.26,
         "ticker": "PKO.WA",
         "quantity": 1,
         "type": "buy"
     },
-    "97j9qusmfh": {
-        "id": "97j9qusmfh",
-        "time": "<method 'timestamp' of 'datetime.datetime' objects>",
-        "value": 103.62,
+    "tnunyw12p8": {
+        "id": "tnunyw12p8",
+        "time": "2026-07-15 10:51:32",
+        "value": 288.29999999999995,
+        "ticker": "DNP.WA",
+        "quantity": 10,
+        "type": "buy"
+    },
+    "chju51j7s2": {
+        "id": "chju51j7s2",
+        "time": "2026-07-15 10:52:42",
+        "value": 110.36,
         "ticker": "PKO.WA",
         "quantity": 1,
-        "type": "buy"
+        "type": "sell"
     },
-    "nd20qk5jns": {
-        "id": "nd20qk5jns",
-        "time": "<method 'timestamp' of 'datetime.datetime' objects>",
-        "value": 123.46,
-        "ticker": "PKN.WA",
-        "quantity": 1,
-        "type": "buy"
-    },
-    "zgf5qvuo2b": {
-        "id": "zgf5qvuo2b",
-        "time": "2026-06-27 17:42:16",
-        "value": 65.44,
+    "f77yxtefnm": {
+        "id": "f77yxtefnm",
+        "time": "2026-07-15 10:53:59",
+        "value": 69.94,
         "ticker": "PZU.WA",
         "quantity": 1,
         "type": "buy"
     },
-    "83shqyczz1": {
-        "id": "83shqyczz1",
-        "time": "2026-06-27 17:46:58",
-        "value": 65.44,
+    "2gwpbrnadd": {
+        "id": "2gwpbrnadd",
+        "time": "2026-07-15 12:51:37",
+        "value": 474.4,
+        "ticker": "PEO.WA",
+        "quantity": 2,
+        "type": "buy"
+    },
+    "i78b2qybn5": {
+        "id": "i78b2qybn5",
+        "time": "2026-07-15 13:10:37",
+        "value": 69.88,
         "ticker": "PZU.WA",
         "quantity": 1,
         "type": "sell"
+    },
+    "p6uiql4fj9": {
+        "id": "p6uiql4fj9",
+        "time": "2026-07-15 13:10:45",
+        "value": 9.37,
+        "ticker": "PGE.WA",
+        "quantity": 1,
+        "type": "buy"
+    },
+    "09cj2e7wri": {
+        "id": "09cj2e7wri",
+        "time": "2026-07-15 13:15:10",
+        "value": 14.46,
+        "ticker": "OPL.WA",
+        "quantity": 1,
+        "type": "buy"
+    },
+    "nw96dsbu7n": {
+        "id": "nw96dsbu7n",
+        "time": "2026-07-15 13:16:48",
+        "value": 40.74,
+        "ticker": "PCO.WA",
+        "quantity": 1,
+        "type": "buy"
+    },
+    "19a49d0mv1": {
+        "id": "19a49d0mv1",
+        "time": "2026-07-15 13:17:37",
+        "value": 26.99,
+        "ticker": "JSW.WA",
+        "quantity": 1,
+        "type": "buy"
+    },
+    "g7go9tvr3c": {
+        "id": "g7go9tvr3c",
+        "time": "2026-07-15 13:23:18",
+        "value": 138.6,
+        "ticker": "ALR.WA",
+        "quantity": 1,
+        "type": "buy"
+    },
+    "5ozqpcjxof": {
+        "id": "5ozqpcjxof",
+        "time": "2026-07-15 14:06:55",
+        "value": 138.1,
+        "ticker": "ALR.WA",
+        "quantity": 1,
+        "type": "sell"
+    },
+    "27r1g1q79l": {
+        "id": "27r1g1q79l",
+        "time": "2026-07-15 14:07:35",
+        "value": 44.24,
+        "ticker": "ALE.WA",
+        "quantity": 1,
+        "type": "buy"
     }
 }

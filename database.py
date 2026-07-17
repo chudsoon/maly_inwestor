@@ -11,8 +11,8 @@ STOCK_MARKET_PATH = os.path.join(BASE_DIR, "stock_market.json")
 
 
     
-def load_stock_maket():
-    if os.path.join(STOCK_MARKET_PATH):
+def load_stock_market():
+    if os.path.isfile(STOCK_MARKET_PATH):
         with open(STOCK_MARKET_PATH, 'r') as file: 
             json_dict = json.load(file)
             stock_market = {}
@@ -28,13 +28,13 @@ def load_wallet(stock_market :dict):
             json_dict = json.load(file)
             wallet = {}
             for key, v in json_dict.items():
-                wallet[key] = Wallet(v['cash'], stock_market, v['shares_value'], v['transaction_history'], v['portfolio'])
+                wallet[key] = Wallet(v['cash'], stock_market, v['shares_value'], v['portfolio'])
             return wallet
     else:
         return {}
 
 def save_wallet(wallet :Wallet):
-    if os.path.join(CONFIG_PATH):
+    if os.path.exists(CONFIG_PATH):
         with open(CONFIG_PATH, 'w', encoding='utf-8') as file:
             json.dump({"primary": wallet.to_dict()}, file, ensure_ascii=False, indent=4)
             
@@ -42,27 +42,43 @@ def save_wallet(wallet :Wallet):
         return "Plik config nie istnieje"
     
 
-def load_transaction_history():
-    if os.path.isfile(TRANSACTION_HISTORY_PATH):
-        with open(TRANSACTION_HISTORY_PATH, 'r') as file:
-            json_dict = json.load(file)
-            transaction_history = {}
-            for key, v in json_dict.items():
-                 transaction_history[key] = Transaction(v['id'], v['time'], v['value'], v['ticker'], v['quantity'], v['type'])
-            return transaction_history
-    else:
-        return {}
 
-def save_trasaction_history(transaction: Transaction):
+
+def save_transaction_history(transaction: Transaction):
+    transaction_dict = {}
     if os.path.isfile(TRANSACTION_HISTORY_PATH):
-        if os.path.join(TRANSACTION_HISTORY_PATH):
-            with open(TRANSACTION_HISTORY_PATH, 'r', encoding='utf-8') as file:
-                transaction_dict = json.load(file)
-            transaction_dict[transaction.id] = transaction.to_dict()
-            with open(TRANSACTION_HISTORY_PATH, 'w', encoding='utf-8') as file:
-                json.dump(transaction_dict, file, ensure_ascii=False, indent=4)
-    else:
-        return "Plik Transaction_History nie istnieje"
+        try:
+            with open(TRANSACTION_HISTORY_PATH, 'r', encoding='UTF-8') as file:
+                content = file.read()
+                if content:
+                    transaction_dict = json.loads(content)
+        except json.JSONDecodeError:
+            transaction_dict = {}
+
+    
+    transaction_dict[transaction.id] = transaction.to_dict()
+
+
+    with open(TRANSACTION_HISTORY_PATH, 'w', encoding='utf-8') as file:
+        json.dump(transaction_dict, file, ensure_ascii=False, indent=4)
+
+
+def load_transaction_history():
+    transaction_dict = {}
+    if os.path.isfile(TRANSACTION_HISTORY_PATH):
+        try:
+            with open(TRANSACTION_HISTORY_PATH, 'r', encoding='UTF-8') as file:
+                content = file.read()
+                if content:
+                    transaction_dict = json.loads(content)
+                    return transaction_dict
+        except json.JSONDecodeError:
+            return transaction_dict
+    return transaction_dict
+
+
+
+
 
 
 

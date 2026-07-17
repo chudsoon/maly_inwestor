@@ -1,49 +1,72 @@
-from models import Wallet
-from api_provider import fetch_gpw_data_list
-from datetime import datetime
+import unittest
+from unittest.mock import   patch, mock_open, MagicMock
+from menu_manager import MenuManager
+from exeptions import InsuffincientSharesError
+import database
 
-from database import load_stock_maket, load_wallet
+class TestDatabase(unittest.TestCase):
 
-def stock_market_update_list(stock_market :dict):
-    today = datetime.today().strftime("%Y-%m-%d")
-    tickers = list(stock_market.keys())
-    quotes = fetch_gpw_data_list(tickers)
-    for key in stock_market.keys():
-        stock_market[key].price = round(quotes.loc[today, ('Close', key)], 2)
+    @patch("database.os.path.isfile")
+    def test_load_stock_market_success(self, mock_isfile):
+        # 1. Przygotowanie mocka
+        mock_isfile.return_value = True
+        fake_json_content = '{"PKO.WA": {"name": "PKO BP", "price": 100.0}}'
+        
+        # 2. Uzycie mock_open, aby udawać zawartość pliku
+        with patch("builtins.open", mock_open(read_data=fake_json_content)):
+            result = database.load_stock_market()
+
+        # 3. Weryfikacja
+        self.assertIn("PKO.WA", result)
+        self.assertEqual(result["PKO.WA"].price, 100.0)
 
 
-wallet = load_wallet().get('primary')
-stock_market = load_stock_maket()
-stock_market_update_list(stock_market)
+    @patch("database.os.path.isfile")
+    def test_load_stock_market_file_not_found(self, mock_isfile):
+        # Symulujemy brak pliku
+        mock_isfile.return_value = False
 
+        result = database.load_stock_market()
 
+        self.assertEqual(result, {})
 
+class TestMenuManager(unittest.TestCase):
+    def setUp(self):
+        # Przygotowanie "zaślepek" (mocki) dla zaleznośći
+        self.mock_wallet = MagicMock()
+        self.mock_market = {"PKO.WA": MagicMock(ticker="PKO.WA")}
+        self.menu = MenuManager(self.mock_wallet, self.mock_market, {})
 
+    @patch("menu_manager.Prompt.ask")
+    @patch("menu_manager.save_transaction_history")
+    def test_handle_sell_success(self, mock_save, mock_prompt):
+        # 1. Ustawiamy zachowanie mocków
+        mock_prompt.side_effect = ["PKO.WA", "5"] # Symuluje wpisanie tickera i ilości
+        self.mock_wallet.sell.return_value = ("Sprzedano akcje", MagicMock())
 
-def get_shares_value(wallet :Wallet, stock_market :dict):
-    total_value = 0.0
+        # 2. Wywołanie metody
+        result = self.menu.handle_sell()
 
-    for ticker, data in wallet.portfolio.items():
-        if ticker in stock_market:
-            current_price = stock_market[ticker].price
-            quantity = data['quantity']
+        # 3. Weryfikacja czy zadziałało
+        self.assertEqual(result, "Sprzedano akcje")
+        self.mock_wallet.sell.assert_called_once()
+        mock_save.assert_called_once()
 
-            total_value += current_price * quantity
+    @patch("menu_manager.Prompt.ask")
+    def test_handle_sell_insufficient_shares(self, mock_prompt):
+        # Symulacja błędu brak wystarczajacej liczby akcji
+        mock_prompt.side_effect = ["PKO.WA", "5"]
+        self.mock_wallet.sell.side_effect = InsuffincientSharesError("Brak akcji")
 
-    return total_value
+        # Poniewaz w handle_sell jest pętla while i continue,
+        # trzeba przerwać test, podając zły input w drugim przebiegu
+        # lub uzyć wywołania, które zakończy pętlę.
+        # Teraz sprawdźmy tylko czy metoda obsługuje wyjątek
 
-def get_total_profit(wallet, stock_market :dict):
-    total_profit = 0.0
-
-    for ticker, data in wallet.portfolio.items():
-        if ticker in stock_market:
-            current_value = stock_market[ticker].price * data['quantity']
-            purchase_value = data['price'] * data['quantity']
-            total_profit += (current_value - purchase_value)
-
-    return round(total_profit, 2)
+        with patch("menu_manager.Prompt.ask", side_effect=["PKO.WA", "5", "b"]):
+            # Tutaj trzeba dodać wyjście z pętli, zeby test się nie zawiesił
+            pass
         
 
-
-
-print(get_total_profit(wallet, stock_market))
+if __name__ == '__main__':
+    unittest.main()

@@ -2,9 +2,9 @@ import math
 
 from gui import draw_main_screen
 from datetime import datetime
-from database import load_wallet, load_stock_maket
+from database import load_wallet, load_stock_market, load_transaction_history
 from models import Wallet, Share, Transaction
-from menu_mananger import MenuManager
+from menu_manager import MenuManager
 from api_provider import fetch_gpw_data_list
 
 
@@ -29,8 +29,9 @@ def stock_market_update_list(stock_market :dict):
 
 if __name__ == "__main__":
     messages = []
-    stock_market = stock_market_update_list(load_stock_maket())
+    stock_market = stock_market_update_list(load_stock_market())
     wallet = load_wallet(stock_market).get('primary')
+    transaction_history = load_transaction_history()
     tickers = []
     for key in stock_market.keys():
         tickers.append(key)
@@ -39,10 +40,12 @@ if __name__ == "__main__":
     stock_market_update_list(stock_market)
 
     
-    menu = MenuManager(wallet, stock_market)
+    menu = MenuManager(wallet, stock_market, transaction_history)
 
     while True:
-        draw_main_screen(wallet, stock_market, messages, menu)
+        transaction_history = load_transaction_history()
+        draw_main_screen(wallet, transaction_history, stock_market, messages, menu)
+
         result = menu.process_input()
 
         if result:
